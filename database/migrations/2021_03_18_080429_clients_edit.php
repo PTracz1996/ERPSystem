@@ -17,7 +17,7 @@ class ClientsEdit extends Migration
         Schema::table($this->table_name, function (Blueprint $table) {
             $table->string('apartment_number', 7)->nullable()->change(); //admin can edit this filed
             $table->string('street', 30)->nullable()->change(); //admin can edit this filed
-            $table->string('phone_number', 15)->unieque()->nullable()->change();
+            $table->string('phone_number', 25)->unieque()->nullable()->change();
         });
     }
 
