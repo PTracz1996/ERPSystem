@@ -26,6 +26,10 @@
     Klient 1 123-456-789 Warszawa ul.Wiejska 12
   </li>
 </ul>
+<a class="btn btn-primary" href="/Edit" role="button">Edytuj klienta</a>
+<br />
+<a class="btn btn-primary" href="/Create" role="button">Usuń klienta</a>
+<br />
   <a class="btn btn-primary" href="/Create" role="button">Stwórz klienta</a>
 
 </div>

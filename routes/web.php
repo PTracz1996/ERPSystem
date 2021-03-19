@@ -24,3 +24,7 @@ Route::get('/Create', function () {
 Route::get('/Show', function () {
     return view('showClient');
 });
+
+Route::get('/Edit', function () {
+    return view('editClient');
+});
