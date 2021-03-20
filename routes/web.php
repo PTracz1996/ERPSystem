@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main');
 });
+Route::post('client/create', [App\Http\Controllers\ClientsController::class, 'create'])->name('client.create');

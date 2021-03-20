@@ -18,7 +18,7 @@ class ClientsMigrate extends Migration
             $table->id();
             $table->timestamps();
             $table->string('company_name',50); //or name and surname
-            $table->string('email',30)->unique();
+            $table->string('email',50)->unique();
             $table->string('phone_number', 15)->unique();
             $table->string('street', 30);
             $table->string('city', 30);
