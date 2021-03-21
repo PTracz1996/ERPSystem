@@ -16,4 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main');
 });
-Route::post('client/create', [App\Http\Controllers\ClientsController::class, 'create'])->name('client.create');
+//Route::post('client/create', [App\Http\Controllers\ClientsController::class, 'create'])->name('client.create');
+
+Route::get('/Create', function () {
+    return view('createClient');
+});
+
+Route::get('/Show', function () {
+    return view('showClient');
+});
+
+Route::get('/Edit', function () {
+    return view('editClient');
+});
