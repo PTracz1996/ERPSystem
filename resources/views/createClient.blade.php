@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <h1><center> Stwórz klienta</center> </h1>
-<form>
+<form method="post" action="/client">
+@csrf
   <div class="form-group row">
     <label for="company_name" class="col-4 col-form-label">
       <font style="vertical-align: inherit;">

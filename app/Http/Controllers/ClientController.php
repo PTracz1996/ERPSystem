@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\clients;
 use Illuminate\Http\Request;
 
-class ClientsController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        //
+        $clients = clients::all();
+        return view('showClient', ['clients' => $clients]);
     }
 
     /**
@@ -24,7 +25,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        //
+        return view('createClient');
     }
 
     /**
@@ -35,7 +36,17 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_clients = new clients;
+        $new_clients->company_name = $request->company_name;
+        $new_clients->email = $request->email;
+        $new_clients->phone_number = $request->phone_number;
+        $new_clients->street = $request->street;
+        $new_clients->city = $request->city;
+        $new_clients->post_code = $request->post_code;
+        $new_clients->house_number = $request->house_number;
+        $new_clients->apartment_number = $request->apartment_number;
+        $new_clients->save();
+        echo("Udalo się utworzyć klienta!");
     }
 
     /**
@@ -44,9 +55,9 @@ class ClientsController extends Controller
      * @param  \App\Models\clients  $clients
      * @return \Illuminate\Http\Response
      */
-    public function show(clients $clients)
+    public function show(Request $request, clients $clients)
     {
-        //
+        return $clients;
     }
 
     /**
@@ -57,7 +68,7 @@ class ClientsController extends Controller
      */
     public function edit(clients $clients)
     {
-        //
+        return view('editClient');
     }
 
     /**

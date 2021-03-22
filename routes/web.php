@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +29,5 @@ Route::get('/Show', function () {
 Route::get('/Edit', function () {
     return view('editClient');
 });
+
+Route::resource('client', ClientController::class);
