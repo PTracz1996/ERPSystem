@@ -18,7 +18,7 @@
       <th scope="col">Kod Pocztowy</th>
       <th scope="col">Numer domu</th>
       <th scope="col">Numer mieszkania</th>
-      <th class="col-xs-6">Akcja</th>
+      <th scope="col">Akcja</th>
     </tr>
   </thead>
   <tbody>
@@ -41,13 +41,6 @@
     @endforeach
   </tbody>
 </table>
-
+{{ $clients->links() }}
 </div>
 @endsection
-<!--
-  PATRYK TU MUSISZ JUŻ ZROBIĆ WYŚWIETLENIE DO WIDOKU NAJLEPIEJ DAJ TO W TABELI
-  WYŚWIETL: IDENTYFIKATOR, NAZWE FIRMY, ADRES E-MAIL, TELEFON ORAZ PRZYCISKI
-  FUNKCJE DO KASOWANIA EDYCJI PODGLĄDU ITP.
-  DO PÓL ODWŁUJ SIE W TAKI SAM SPOSÓB JAK JA DO NAZWY FIRMY
-  CZYLI JESLI CHCESZ TELEFON TO: {{$client->phone_number}} itp.
- -->
