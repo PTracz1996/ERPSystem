@@ -55,9 +55,9 @@ class ClientController extends Controller
      * @param  \App\Models\clients  $clients
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, clients $clients)
+    public function show(clients $clients)
     {
-        return $clients;
+        echo(".".$clients->company_name);
     }
 
     /**
