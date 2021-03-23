@@ -12,10 +12,10 @@ class ClientsSoftDeleteEdit extends Migration
      * @return void
      */
 
-    private string $table_name = "clients";
+    //private string $table_name = "clients";
     public function up()
     {
-        Schema::table($this->table_name, function (Blueprint $table) {
+        Schema::table("clients", function (Blueprint $table) {
             $table->string('nip', 13)->nullable();
             $table->boolean('is_delete')->default(false);
         });

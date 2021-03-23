@@ -11,10 +11,10 @@ class ClientsMigrate extends Migration
      *
      * @return void
      */
-    private string $table_name = "clients";
+    //private string $table_name = "clients";
     public function up()
     {
-        Schema::create($this->table_name, function (Blueprint $table) {
+        Schema::create("clients", function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('company_name',50); //or name and surname

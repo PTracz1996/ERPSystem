@@ -11,10 +11,10 @@ class ClientsEdit extends Migration
      *
      * @return void
      */
-    private string $table_name = "clients";
+    //private string $table_name = "clients";
     public function up()
     {
-        Schema::table($this->table_name, function (Blueprint $table) {
+        Schema::table("clients", function (Blueprint $table) {
             $table->string('apartment_number', 7)->nullable()->change(); //admin can edit this filed
             $table->string('street', 30)->nullable()->change(); //admin can edit this filed
             $table->string('phone_number', 25)->unieque()->nullable()->change();
