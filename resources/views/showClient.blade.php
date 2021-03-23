@@ -33,10 +33,11 @@
       <td>{{@$client->house_number}}</td>
       <td>{{@$client->apartment_number}}</td>
       <td>
-      <a  href="/client" ><button class="btn"><i class="fa fa-trash"></i></button></a>
-      <a  href="/Edit" ><button class="btn"><i class="fa fa-edit"></i></button></a>
-      <a  href="/client" ><button class="btn"><i class="fa fa-eye"></i></button></a>
-      <a  href="/create/client" ><button class="btn"><i class="fa fa-plus"></i></button></a>
+      <button class="btn delete" data-id="{{$client->id}}"><i class="fa fa-trash"></i></button>
+      <meta name="csrf-token" content="{{ csrf_token() }}" />
+      <a  href="/Edit" ><button class="btn" data-id="{{$client->id}}"><i class="fa fa-edit"></i></button></a>
+      <a  href="/client" ><button class="btn" data-id="{{$client->id}}"><i class="fa fa-eye"></i></button></a>
+      <a  href="/create/client" ><button class="btn" data-id="{{$client->id}}"><i class="fa fa-plus"></i></button></a>
       </td>
       </tr>
     @endforeach
@@ -44,4 +45,10 @@
 </table>
 {{ $clients->links() }}
 </div>
+@endsection
+@section('javascript')
+    const deleteUrl = "{{ url('/client/') }}/";
+@endsection
+@section('js-files')
+    <script src="{{ asset('js/delete.js') }}"></script>
 @endsection

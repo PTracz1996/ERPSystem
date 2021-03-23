@@ -14,7 +14,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients=clients::paginate(3);
+        $clients=clients::where('is_delete', false)->paginate(3);
         return view('showClient', ['clients' => $clients]);
     }
 
@@ -86,11 +86,17 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\clients  $clients
      * @return \Illuminate\Http\Response
      */
-    public function destroy(clients $clients)
+    public function destroy($id)
     {
-        //
+        //$to_delete = clients::where('id', $id);
+        //echo $to_delete->company_name;
+        $client = clients::find($id);
+        $client->is_delete = true;
+        $client->save();
+        return response()->json([
+            'status' => 'success',
+        ]);
     }
 }

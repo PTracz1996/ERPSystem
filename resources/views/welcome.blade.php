@@ -73,5 +73,9 @@
         <span class="text-muted">System zarządzania zamówieniami @2021</span>
       </div>
     </footer>
+    <script type="text/javascript">
+        @yield('javascript')
+    </script>
+    @yield('js-files')
     </body>
 </html>
