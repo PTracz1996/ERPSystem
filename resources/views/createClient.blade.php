@@ -24,6 +24,20 @@
     </div>
   </div>
   <div class="form-group row">
+    <label for="nip" class="col-4 col-form-label">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">NIP </font>
+      </font>
+    </label> 
+    <div class="col-8">
+      <div class="input-group">
+        <div class="input-group-prepend">
+        </div> 
+        <input id="nip" name="nip" type="text" class="form-control" required="required">
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
     <label for="email" class="col-4 col-form-label">
       <font style="vertical-align: inherit;">
         <font style="vertical-align: inherit;">E-mail </font>

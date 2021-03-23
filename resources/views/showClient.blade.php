@@ -10,28 +10,24 @@
 <table class="table table-fixed table-condensed">
   <thead>
     <tr>
-      <th scope="col">Nazwa firmy</th>
-      <th scope="col">E-mail</th>
-      <th scope="col">Numer telefonu</th>
-      <th scope="col">Ulica</th>
-      <th scope="col">Miasto</th>
-      <th scope="col">Kod Pocztowy</th>
-      <th scope="col">Numer domu</th>
-      <th scope="col">Numer mieszkania</th>
-      <th scope="col">Akcja</th>
+      <th scope="col"><i class="fa fa-copyright"></i> Nazwa firmy</th>
+      <th scope="col"><i class="fa fa-indent"></i> NIP</th>
+      <th scope="col"><i class="fa fa-home"></i> Adres</th>
+      <th scope="col"><i class="fa fa-at"></i> E-mail</th>
+      <th scope="col"><i class="fa fa-phone"></i> Nr telefonu</th>
+      <th scope="col"><i class="fa fa-cog"></i> Akcja</th>
     </tr>
   </thead>
   <tbody>
   @foreach($clients as $client)
     <tr class="clickableRow">
       <td>{{$client->company_name}}</td>
+      <td>{{$client->nip}}</td>
+      <td>ul.{{@$client->street}}
+      {{@$client->house_number}}/{{@$client->apartment_number}}<br />
+      {{@$client->city}} {{@$client->post_code}}</td>
       <td>{{$client->email}}</td>
       <td>{{@$client->phone_number}}</td>
-      <td>ul.{{@$client->street}}</td>
-      <td>{{@$client->city}}</td>
-      <td>{{@$client->post_code}}</td>
-      <td>{{@$client->house_number}}</td>
-      <td>{{@$client->apartment_number}}</td>
       <td>
       <button class="btn delete" data-id="{{$client->id}}"><i class="fa fa-trash"></i></button>
       <meta name="csrf-token" content="{{ csrf_token() }}" />
