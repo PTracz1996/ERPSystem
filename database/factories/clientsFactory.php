@@ -22,6 +22,7 @@ class clientsFactory extends Factory
     public function definition()
     {
         return [
+            'nip' => "PL".$this->faker->biasedNumberBetween(1000000000,9999999999),
             'company_name' => $this->faker->company, //company name or name and surname
             'email' => $this->faker->unique()->email,
             'city' => $this->faker->city,
