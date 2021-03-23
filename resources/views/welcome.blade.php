@@ -41,8 +41,8 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Klienci</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="/Create">Stwórz klienta</a>
-              <a class="dropdown-item" href="/Show">Pokaż klientów</a>
+              <a class="dropdown-item" href="/create/client">Stwórz klienta</a>
+              <a class="dropdown-item" href="/client">Pokaż klientów</a>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>

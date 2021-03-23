@@ -18,11 +18,11 @@ Route::get('/', function () {
 });
 //Route::post('client/create', [App\Http\Controllers\ClientsController::class, 'create'])->name('client.create');
 
-Route::get('/Create', function () {
+Route::get('/create/client', function () {
     return view('createClient');
 });
 
-Route::get('/Show', function () {
+Route::get('/client', function () {
     return view('showClient');
 });
 

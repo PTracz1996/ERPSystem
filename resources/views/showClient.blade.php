@@ -1,18 +1,41 @@
 @extends('welcome')
 
-@section('content')
+@section('content')\
+<style>
 
+</style>
 <h1><center>Klienci</center></h1>
 
 <div class="list-group">
-  <ul class="list-group">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nazwa firmy</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Numer telefonu</th>
+      <th scope="col">Ulica</th>
+      <th scope="col">Miasto</th>
+      <th scope="col">Kod Pocztowy</th>
+      <th scope="col">Numer domu</th>
+      <th scope="col">Numer mieszkania</th>
+
+    </tr>
+  </thead>
+  <tbody>
   @foreach($clients as $client)
-  <li class="list-group-item">
-  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-    {{$client->company_name}}
-  </li>
-  @endforeach
-</ul>
+    <tr>
+      <td>{{$client->company_name}}</td>
+      <td>{{$client->email}}</td>
+      <td>{{@$client->phone_number}}</td>
+      <td>ul.{{@$client->street}}</td>
+      <td>{{@$client->city}}</td>
+      <td>{{@$client->post_code}}</td>
+      <td>{{@$client->house_number}}</td>
+      <td>{{@$client->apartment_number}}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
 <a class="btn btn-primary" href="/Edit" role="button">Edytuj klienta</a>
 <br />
 <a class="btn btn-primary" href="/Create" role="button">Usuń klienta</a>
