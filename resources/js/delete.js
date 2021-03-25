@@ -11,7 +11,7 @@ $(function() {
                 $.ajax(
                     {
                         method: "DELETE",
-                        url: "client/" + $(this).data("id"),
+                        url: deleteUrl + "/" + $(this).data("id"),
                         data: {id: $(this).data("id")}
                     }
                     )

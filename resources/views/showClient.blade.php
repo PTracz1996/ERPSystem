@@ -7,7 +7,7 @@
 <h1><center>Klienci</center></h1>
 
 <div class="list-group">
-<table class="table table-fixed table-condensed">
+<table class="table table-fixed table-responsive">
   <thead>
     <tr>
       <th scope="col"><i class="fa fa-copyright"></i> Nazwa firmy</th>
@@ -20,7 +20,7 @@
   </thead>
   <tbody>
   @foreach($clients as $client)
-    <tr class="clickableRow">
+    <tr class="clickableRow overflow-auto">
       <td>{{$client->company_name}}</td>
       <td>{{$client->nip}}</td>
       <td>ul.{{@$client->street}}
@@ -30,8 +30,7 @@
       <td>{{@$client->phone_number}}</td>
       <td>
       <button class="btn delete" data-id="{{$client->id}}"><i class="fa fa-trash"></i></button>
-      <meta name="csrf-token" content="{{ csrf_token() }}" />
-      <a  href="/Edit" ><button class="btn" data-id="{{$client->id}}"><i class="fa fa-edit"></i></button></a>
+      <a  href="/Edit" ><button class="btn" data-id="{{$client->id}}" data-token="{{ csrf_token() }}"><i class="fa fa-edit"></i></button></a>
       <a  href="/client" ><button class="btn" data-id="{{$client->id}}"><i class="fa fa-eye"></i></button></a>
       <a  href="/create/client" ><button class="btn" data-id="{{$client->id}}"><i class="fa fa-plus"></i></button></a>
       </td>
