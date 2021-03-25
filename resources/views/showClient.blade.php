@@ -7,6 +7,7 @@
 <h1><center>Klienci</center></h1>
 
 <div class="list-group">
+<<<<<<< HEAD
 <table class="table table-fixed table-responsive">
   <thead>
     <tr>
@@ -35,9 +36,17 @@
       <a  href="/create/client" ><button class="btn" data-id="{{$client->id}}"><i class="fa fa-plus"></i></button></a>
       </td>
       </tr>
+=======
+
+  @foreach($clients as $client)
+  <button data-toggle="collapse" data-target="'#{{$client->id}}">{{$client->company_name}}</button>
+
+<div id="{{$client->id}}" class="collapse">
+Lorem ipsum dolor text....
+</div>
+>>>>>>> fca1c7065da4e8f701e8ace33f7559adf22ca5f0
     @endforeach
-  </tbody>
-</table>
+
 {{ $clients->links() }}
 </div>
 @endsection
